@@ -1,5 +1,5 @@
 function __vimdicator() {
-  PARENT_PROCESS_COMMAND=`ps --no-headers -o command $PPID | cut -d' ' -f1`
+  PARENT_PROCESS_COMMAND=$(ps -p $PPID -o comm=)
 
   if [ $PARENT_PROCESS_COMMAND = "vim" ]; then
     echo "[vim]"
